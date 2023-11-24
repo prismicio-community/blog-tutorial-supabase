@@ -2,10 +2,10 @@ import { NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase/server";
 
 export async function POST(req) {
+  console.log(req);
   const body = await req.json();
-  const { response_url, actions, user } = JSON.parse(body.payload);
 
-  console.log(JSON.parse(body.payload));
+  const { response_url, actions, user } = JSON.parse(body.payload);
 
   let res = "";
 
