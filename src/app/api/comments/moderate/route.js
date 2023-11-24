@@ -2,24 +2,25 @@ import { NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase/server";
 
 export async function POST(req) {
-  console.log(req);
   const body = await req.json();
 
-  const { response_url, actions, user } = JSON.parse(body.payload);
+  console.log(body);
 
-  let res = "";
+  //   const { response_url, actions, user } = JSON.parse(body.payload);
 
-  if (actions[0].action_id === "approve_comment") {
-    res = await approveComment(user.id, actions[0].value);
-  } else if (actions[0].action_id === "delete_comment") {
-    res = await deleteComment(user.id, actions[0].value);
-  }
+  //   let res = "";
 
-  await respondToSlack(response_url, res, actions[0].action_id);
+  //   if (actions[0].action_id === "approve_comment") {
+  //     res = await approveComment(user.id, actions[0].value);
+  //   } else if (actions[0].action_id === "delete_comment") {
+  //     res = await deleteComment(user.id, actions[0].value);
+  //   }
 
-  return new NextResponse(null, {
-    status: 200,
-  });
+  //   await respondToSlack(response_url, res, actions[0].action_id);
+
+  //   return new NextResponse(null, {
+  //     status: 200,
+  //   });
 }
 
 // Delete comment from Supabase
