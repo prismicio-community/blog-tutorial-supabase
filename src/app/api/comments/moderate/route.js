@@ -5,6 +5,8 @@ export async function POST(req) {
   const body = await req.json();
   const { response_url, actions, user } = JSON.parse(body.payload);
 
+  console.log(JSON.parse(body.payload));
+
   let res = "";
 
   if (actions[0].action_id === "approve_comment") {
