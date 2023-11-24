@@ -18,9 +18,9 @@ export async function POST(req) {
 
   //   await respondToSlack(response_url, res, actions[0].action_id);
 
-  //   return new NextResponse(null, {
-  //     status: 200,
-  //   });
+  return new NextResponse(null, {
+    status: 200,
+  });
 }
 
 // Delete comment from Supabase
