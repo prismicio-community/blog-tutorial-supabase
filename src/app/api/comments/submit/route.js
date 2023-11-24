@@ -6,7 +6,7 @@ export async function POST(req) {
 
   const { post_id, email, comment, nickname, uid } = body;
 
-  const { error } = await supabase
+  const { data, error } = await supabase
     .from("comments")
     .insert({
       post_id,
@@ -80,7 +80,7 @@ export async function POST(req) {
                 },
                 style: "primary",
                 action_id: "approve_comment",
-                value: post_id,
+                value: data[0].id,
               },
               {
                 type: "button",
@@ -91,7 +91,7 @@ export async function POST(req) {
                 },
                 style: "danger",
                 action_id: "delete_comment",
-                value: post_id,
+                value: data[0].id,
                 confirm: {
                   title: {
                     type: "plain_text",
