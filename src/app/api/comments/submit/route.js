@@ -23,7 +23,7 @@ export async function POST(req) {
   }
 
   await fetch(
-    "https://hooks.slack.com/services/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",
+    "https://hooks.slack.com/services/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",
     {
       method: "POST",
       body: JSON.stringify({
