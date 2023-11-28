@@ -5,7 +5,14 @@ export async function POST(req) {
   const formData = await req.formData();
   const payload = await formData.get("payload");
 
-  const { response_url, actions, user } = JSON.parse(payload);
+  const { response_url, actions, user, token } = JSON.parse(payload);
+
+  // Check if the request is coming from Slack
+  if (token !== process.env.SLACK_VERIFICATION_TOKEN) {
+    return new NextResponse(null, {
+      status: 401,
+    });
+  }
 
   let res = "";
 
