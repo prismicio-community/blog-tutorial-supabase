@@ -9,7 +9,8 @@ export async function POST(req) {
 
   let res = "";
 
-  console.log(formData);
+  console.log("Request: ", req);
+  console.log("Form data: ", formData);
 
   if (actions[0].action_id === "approve_comment") {
     res = await approveComment(user.id, actions[0].value);
