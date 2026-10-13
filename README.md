@@ -1,5 +1,8 @@
 # Prismic + Next.js Blog Starter
 
+> [!NOTE]
+> This is the finished code for a Prismic blog tutorial. It is archived and no longer updated. To start a new Prismic project with Next.js, see the [Next.js guide](https://prismic.io/docs/nextjs).
+
 This sample blog is an excellent starting point to explore [Next.js][nextjs] and [Prismic][prismic]. Get it up and running in minutes. Modify and adapt it to your liking; it's all yours!
 
 - **Demo**: [Open live demo][live-demo]
